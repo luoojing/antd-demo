@@ -1,19 +1,39 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <a-button type="danger" shape="circle">Button</a-button>
+    <a-icon type="wifi"/>
+        <a-radio-group v-model="size">
+          <a-radio value="small">Small</a-radio>
+          <a-radio value="middle">Middle</a-radio>
+          <a-radio value="large">Large</a-radio>
+        </a-radio-group>
+        <br />
+        <br />
+        <a-space :size="size" direction="vertical">
+          <a-button type="primary">Primary</a-button>
+          <a-button>Default</a-button>
+          <a-button type="dashed">Dashed</a-button>
+          <a-button type="link">Link</a-button>
+        </a-space>
+
+
+
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      size: 'small',
+    };
+  },
+};
+
+
 </script>
 
 <style>
